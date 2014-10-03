@@ -1,0 +1,15 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_cpu_8h.html" title="Cpu.h" alt="" coords="644,379,700,405"/>
+<area shape="rect" id="node17" href="$_l_e_d1_8h.html" title="This component implements a universal driver for a single LED." alt="" coords="588,155,653,181"/>
+<area shape="rect" id="node23" href="$_l_e_dpin1_8h.html" title="This component &quot;BitIO&quot; implements an one&#45;bit input/output. It uses one bit/pin of a port..." alt="" coords="498,229,581,256"/>
+<area shape="rect" id="node29" href="$_bit_io_ldd1_8h.html" title="The HAL BitIO component provides a low level API for unified access to general purpose digital input/..." alt="" coords="330,304,416,331"/>
+<area shape="rect" id="node42" href="$_s_m1_8h.html" title="This component &quot;SynchroMaster&quot; implements MASTER part of synchronous serial master&#45;slave communicatio..." alt="" coords="1067,229,1126,256"/>
+<area shape="rect" id="node48" href="$_s_master_ldd1_8h.html" title="This component &quot;SPIMaster_LDD&quot; implements MASTER part of synchronous serial master&#45;slave communicatio..." alt="" coords="1282,304,1392,331"/>
+<area shape="rect" id="node59" href="$_w_a_i_t1_8h.html" title="Implements busy waiting routines." alt="" coords="780,304,852,331"/>
+<area shape="rect" id="node66" href="$_c_s1_8h.html" title="CS1.h" alt="" coords="977,304,1036,331"/>
+<area shape="rect" id="node73" href="$_events_8h.html" title="This is user&#39;s event module. Put your event handler code here." alt="" coords="850,80,922,107"/>
+<area shape="rect" id="node5" href="$_p_e___types_8h.html" title="PE_Types.h &#45; contains definitions of basic types, register access macros and hardware specific macros..." alt="" coords="1461,453,1554,480"/>
+<area shape="rect" id="node9" href="$_p_e___error_8h.html" title="This component &quot;PE_Error&quot; contains internal definitions of the error constants." alt="" coords="136,453,222,480"/>
+<area shape="rect" id="node11" href="$_p_e___const_8h.html" title="This component &quot;PE_Const&quot; contains internal definitions of the constants." alt="" coords="459,453,550,480"/>
+<area shape="rect" id="node13" href="$_i_o___map_8h.html" title="IO_Map.h &#45; implements an IO device&#39;s mapping. This module contains symbol definitions of all peripher..." alt="" coords="900,453,978,480"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_events_8h.html" title="This is user&#39;s event module. Put your event handler code here." alt="" coords="839,155,1221,181"/>
+<area shape="rect" id="node7" href="$main_8c.html" title="Main module. This module contains user&#39;s application code." alt="" coords="5,229,376,256"/>
+<area shape="rect" id="node9" href="$_cpu_8c.html" title="C:/Users/Imhof Dominik/Projects_Git/FRDM/Generated_Code/Cpu.c" alt="" coords="401,229,815,256"/>
+<area shape="rect" id="node13" href="$_vectors_8c.html" title="C:/Users/Imhof Dominik/Projects_Git/FRDM/Generated_Code/Vectors.c" alt="" coords="1689,229,2127,256"/>
+<area shape="rect" id="node16" href="$_s_m1_8h.html" title="This component &quot;SynchroMaster&quot; implements MASTER part of synchronous serial master&#45;slave communicatio..." alt="" coords="1047,80,1465,107"/>
+<area shape="rect" id="node21" href="$_p_e___l_d_d_8h.html" title="C:/Users/Imhof Dominik/Projects_Git/FRDM/Generated_Code/PE_LDD.h" alt="" coords="1540,155,1983,181"/>
+<area shape="rect" id="node26" href="$_s_master_ldd1_8c.html" title="This component &quot;SPIMaster_LDD&quot; implements MASTER part of synchronous serial master&#45;slave communicatio..." alt="" coords="2007,155,2476,181"/>
+<area shape="rect" id="node5" href="$_events_8c.html" title="This is user&#39;s event module. Put your event handler code here." alt="" coords="839,229,1221,256"/>
+<area shape="rect" id="node11" href="$_s_m1_8c.html" title="This component &quot;SynchroMaster&quot; implements MASTER part of synchronous serial master&#45;slave communicatio..." alt="" coords="1247,229,1665,256"/>
+<area shape="rect" id="node23" href="$_p_e___l_d_d_8c.html" title="C:/Users/Imhof Dominik/Projects_Git/FRDM/Generated_Code/PE_LDD.c" alt="" coords="2151,229,2593,256"/>
+</map>
