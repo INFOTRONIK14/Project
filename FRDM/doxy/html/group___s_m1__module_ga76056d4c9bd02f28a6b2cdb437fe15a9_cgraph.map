@@ -1,4 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$group___s_master_ldd1__module.html#ga310bc850ef629bbaeca703e3668456a1" title="Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors a..." alt="" coords="159,5,281,32"/>
-<area shape="rect" id="node5" href="$group___s_master_ldd1__module.html#ga05f7e77c543c9eda651de65651276410" title="This method specifies the number of data to receive. The method returns ERR_BUSY until the specified ..." alt="" coords="128,56,312,83"/>
-</map>

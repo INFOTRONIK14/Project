@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$group___bit_io_ldd1__module.html#gadb85449174dc263f061e143166eb86c5" title="Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors a..." alt="" coords="177,5,277,32"/>
-<area shape="rect" id="node5" href="$group___s_m1__module.html#ga76056d4c9bd02f28a6b2cdb437fe15a9" title="SM1_Init" alt="" coords="190,56,263,83"/>
-<area shape="rect" id="node7" href="$group___s_master_ldd1__module.html#ga310bc850ef629bbaeca703e3668456a1" title="Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors a..." alt="" coords="356,31,479,57"/>
-<area shape="rect" id="node9" href="$group___s_master_ldd1__module.html#ga05f7e77c543c9eda651de65651276410" title="This method specifies the number of data to receive. The method returns ERR_BUSY until the specified ..." alt="" coords="325,81,509,108"/>
-</map>

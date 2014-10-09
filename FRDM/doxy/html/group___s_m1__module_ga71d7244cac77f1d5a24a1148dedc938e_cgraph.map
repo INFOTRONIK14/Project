@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$group___events__module.html#gae835578b482ac5525288ceaaa1d9b48a" title="SM1_OnError" alt="" coords="303,5,404,32"/>
-<area shape="rect" id="node5" href="$group___events__module.html#ga05c142e505e3fc83537b85945d713c40" title="SM1_OnRxChar" alt="" coords="295,56,411,83"/>
-<area shape="rect" id="node7" href="$group___events__module.html#ga7c8fa5c0e6dec417b044b6ef2be623f2" title="SM1_OnFullRxBuf" alt="" coords="289,107,418,133"/>
-<area shape="rect" id="node9" href="$group___s_master_ldd1__module.html#ga05f7e77c543c9eda651de65651276410" title="This method specifies the number of data to receive. The method returns ERR_BUSY until the specified ..." alt="" coords="261,157,445,184"/>
-</map>

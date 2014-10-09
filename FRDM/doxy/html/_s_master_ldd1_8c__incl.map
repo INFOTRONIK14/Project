@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$_s_m1_8h.html" title="This component &quot;SynchroMaster&quot; implements MASTER part of synchronous serial master&#45;slave communicatio..." alt="" coords="205,80,264,107"/>
-<area shape="rect" id="node17" href="$_s_master_ldd1_8h.html" title="This component &quot;SPIMaster_LDD&quot; implements MASTER part of synchronous serial master&#45;slave communicatio..." alt="" coords="273,155,383,181"/>
-<area shape="rect" id="node5" href="$_p_e___types_8h.html" title="PE_Types.h &#45; contains definitions of basic types, register access macros and hardware specific macros..." alt="" coords="5,304,99,331"/>
-<area shape="rect" id="node9" href="$_p_e___error_8h.html" title="This component &quot;PE_Error&quot; contains internal definitions of the error constants." alt="" coords="123,304,209,331"/>
-<area shape="rect" id="node11" href="$_p_e___const_8h.html" title="This component &quot;PE_Const&quot; contains internal definitions of the constants." alt="" coords="234,304,325,331"/>
-<area shape="rect" id="node13" href="$_i_o___map_8h.html" title="IO_Map.h &#45; implements an IO device&#39;s mapping. This module contains symbol definitions of all peripher..." alt="" coords="350,304,428,331"/>
-<area shape="rect" id="node23" href="$_cpu_8h.html" title="Cpu.h" alt="" coords="141,229,197,256"/>
-</map>
