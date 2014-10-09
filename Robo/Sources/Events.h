@@ -34,6 +34,9 @@
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
+#include "WAIT1.h"
+#include "CS1.h"
+#include "HF1.h"
 
 #ifdef __cplusplus
 extern "C" {
