@@ -39,7 +39,8 @@
 #else
  /* #error "unknown configuration?"*/
 #endif
-
+#define PL HAS HAS TIMER  (1)
+  /*!< Set to 1 to enable LED support, 0 otherwise */
 /*!
  * \brief Platform initialization
  */
