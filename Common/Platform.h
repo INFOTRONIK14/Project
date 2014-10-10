@@ -43,6 +43,10 @@
 #else
  /* #error "unknown configuration?"*/
 #endif
+<<<<<<< HEAD
+#define PL HAS HAS TIMER  (1)
+  /*!< Set to 1 to enable LED support, 0 otherwise */
+=======
 
 
 #define PL_HAS_EVENTS  (1)
@@ -68,6 +72,7 @@
 
 
 
+>>>>>>> 709726a0cb6cd10bd262484610bdcb71fcfcafbf
 /*!
  * \brief Platform initialization
  */
