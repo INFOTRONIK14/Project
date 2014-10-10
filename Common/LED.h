@@ -18,7 +18,10 @@
 #define LED_H_
 
 #include "Platform.h"
+#include "LED1.h"
 
+
+#if 0
 #if PL_NOF_LEDS >= 1
   #include "LedBit1.h"
   #define LED1_On()     LedBit1_ClrVal()
@@ -140,4 +143,4 @@ void LED_Init(void);
 void LED_Deinit(void);
 
 #endif /* LED_H_ */
-
+#endif
