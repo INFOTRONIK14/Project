@@ -71,16 +71,16 @@ void EVNT_HandleEvent(void (*callback)(EVNT_Handle)) {
    EVNT_Handle event;
    CS1_CriticalVariable()
 
-   CS1_EnterCritical();
+   CS1_EnterCritical();    // greife in globale datenstruktur ein
    for (event=(EVNT_Handle)0; event<EVNT_NOF_EVENTS; event++) { /* does a test on every event */
      if (GET_EVENT(event)) { /* event present? */
-       CLR_EVENT(event); /* clear event */
+       CLR_EVENT(event); /* clear event */  // wieso da Makros aufrufen? weil in critical section, gibt so keine verschachtelung!!
        break; /* get out of loop */
      }
    }
    CS1_ExitCritical();
-   if (event != EVNT_NOF_EVENTS) {
-     callback(event);
+   if (event != EVNT_NOF_EVENTS) {   // dann rufen wir eventhandler auf
+     callback(event);  // der könnte wieder ein event setzen, dann
      /* Note: if the callback sets the event, we will get out of the loop.
       * We will catch it by the next iteration.
       */

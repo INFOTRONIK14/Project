@@ -30,14 +30,14 @@ void LED_Deinit(void) {
   LED3_Off();
   #endif
   LED1_Deinit();
-  //LED2_Deinit();
-  //LED3_Deinit();
+  LED2_Deinit();
+  LED3_Deinit();
 }
 
 void LED_Init(void) {
   LED1_Init();
-  //LED2_Init();
-  //LED3_Init();
+  LED2_Init();
+  LED3_Init();
   /* all LED's off by default */
   #if PL_NOF_LEDS>=1
   LED1_Off();
@@ -67,12 +67,12 @@ void LED_Test(void) {
   LED3_On();
 
   LED1_Off();
-  //LED2_Off();
-  //LED3_Off();
+  LED2_Off();
+  LED3_Off();
 
   LED1_Neg();
-  //LED2_Neg();
-  //LED3_Neg();
+  LED2_Neg();
+  LED3_Neg();
 
   LED1_On();
   if (!LED1_Get()) {

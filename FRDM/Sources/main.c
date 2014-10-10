@@ -31,33 +31,56 @@
 #include "Cpu.h"
 #include "Events.h"
 #include "LED1.h"
-#include "LedPin1.h"
+#include "LEDpin1.h"
+/*#include "LedBit2.h"
+#include "BitIoLdd2.h"
+#include "LED3.h"
+#include "LEDpin3.h"
+#include "SW2.h"
+#include "BitIoLdd4.h"
+#include "LedBit3.h"*/
 #include "BitIoLdd1.h"
-#include "SM1.h"
-#include "SMasterLdd1.h"
+/*#include "LedBit1.h"
+#include "BitIoLdd6.h"
+#include "SW3.h"
+#include "BitIoLdd5.h"
+#include "SW4.h"
+#include "BitIoLdd7.h"
+#include "SW5.h"
+#include "BitIoLdd8.h"
+#include "SW6.h"
+#include "BitIoLdd9.h"
+#include "SW7.h"
+#include "BitIoLdd10.h"*/
+#include "TI1.h"
+#include "TimerIntLdd1.h"
+#include "TU1.h"
+#include "LED2.h"
+#include "LEDpin2.h"
 #include "WAIT1.h"
-#include "CS1.h"
 #include "HF1.h"
-//#include "LedBit2.h"
-//#include "BitIoLdd2.h"
-//#include "LedBit3.h"
-//#include "BitIoLdd6.h"
-//#include "WAIT1.h"
+#include "CS1.h"
+#include "SW1.h"
+#include "BitIoLdd3.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
-/* User includes (#include below (unter)  this line is not maintained by Processor Expert) */
-
+/* User includes (#include below this line is not maintained by Processor Expert) */
+#include "Platform.h"
 #include "Application.h"
 
-/*lint -save  -e970 Disable MISRA rule (6.3) checking. */
+static int i;
+/*lint -save  -e970  Disable MISRA rule (6.3) checking. */
 int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
 {
   /* Write your local variable definition here */
 
+#if PL_HAS_RESET_KEY
+  WAIT1_Waitms(500); /* wait some time until we mux the reset line */
+#endif
   /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
   PE_low_level_init();
   /*** End of Processor Expert internal initialization.                    ***/
