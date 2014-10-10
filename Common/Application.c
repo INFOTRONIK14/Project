@@ -25,17 +25,20 @@
 
 void APP_Start(void) {
   PL_Init(); /* platform initialization */
+  EVNT_Init();
   for(;;) {
     LED1_On();
-    /**WAIT1_Waitms(300);
+    //LED1_Off();
+    //WAIT1_Waitms(300);
     LED1_Off();
-    LED2_On();
-    WAIT1_Waitms(300);
-    LED2_Off();
-    LED3_On();
-    WAIT1_Waitms(300);
-    LED3_Off();
-    */
+    //LED2_On();
+    //WAIT1_Waitms(300);
+    //LED2_Off();
+    //LED3_On();
+    //WAIT1_Waitms(300);
+    //LED3_Off();
+
   }
+  EVNT_DeInit();
 }
 

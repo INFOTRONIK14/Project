@@ -37,6 +37,7 @@
 #include "SMasterLdd1.h"
 #include "WAIT1.h"
 #include "CS1.h"
+#include "HF1.h"
 //#include "LedBit2.h"
 //#include "BitIoLdd2.h"
 //#include "LedBit3.h"

@@ -40,6 +40,18 @@
  /* #error "unknown configuration?"*/
 #endif
 
+
+#define PL_HAS_EVENTS  (1)
+  /*!< Set to 1 to enable Event support, 0 otherwise */
+
+
+
+
+
+
+
+
+
 /*!
  * \brief Platform initialization
  */
