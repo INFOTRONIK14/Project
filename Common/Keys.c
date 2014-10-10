@@ -15,17 +15,19 @@
 #endif
 
 void KEY_Scan(void) {
-#if PL_NOF_KEYS >= 1
-  if (KEY1_Get()) { /* key pressed */
-    EVNT_SetEvent(EVNT_SW1_PRESSED);
+#if PL_NOF_KEYS >= 2 && PL_SW2_POLL
+  if (KEY2_Get()) { /* key pressed */
+    EVNT_SetEvent(EVNT_SW2_PRESSED);
   }
 #endif
   /*! \todo Implement handling of all the other keys */
 }
 
 #if PL_HAS_KBI
-void KEY_OnInterrupt(KEY_Buttons button) {
-  /*! \todo will need to implement functionality for interrupts */
+void KEY_OnInterrupt(KEY_Buttons button) { // rufe diese funktion im interrupt
+  switch(button)
+  case :
+
 }
 #endif
 

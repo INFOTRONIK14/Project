@@ -48,13 +48,23 @@
 #define PL_HAS_EVENTS  (1)
   /*!< Set to 1 to enable Event support, 0 otherwise */
 
-
+#define PL_SW1_POLL  (1)
+  /*!< Set to 1 to enable Event support, 0 otherwise */
 
 #define PL_HAS_HAS_TIMER  (1)
   /*!< Set to 1 to enable TIMER support, 0 otherwise */
 
+#define PL_HAS_KEYS  (1)
+  /*!< Set to 1 to enable TIMER support, 0 otherwise */
 
+#define PL_NOF_KEYS       (7)
+     /*!< FRDM board has up to 3 LEDs (RGB) */
 
+#define PL_HAS_KBI  (1)
+  /*!< Set to 1 to enable TIMER support, 0 otherwise */
+
+#define PL_HAS_JOYSTICK  (1)
+  /*!< Set to 1 to enable TIMER support, 0 otherwise */
 
 
 

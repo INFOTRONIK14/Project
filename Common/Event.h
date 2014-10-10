@@ -17,6 +17,8 @@
 
 typedef enum EVNT_Handle {  // hier werden neue events hinzugefügt
   EVNT_INIT,            /*!< System Initialization Event */
+  EVENT_LED_HEARTBEAT,
+  EVNT_SW1_PRESSED,
   EVNT_NOF_EVENTS       /*!< Must be last one! */
 } EVNT_Handle;
 
