@@ -15,13 +15,28 @@
 #if PL_HAS_KEYS
 
 typedef enum {
+#if PL_NOF_KEYS>=1
   KEY_BTN1, /*!< button 1 */
+#endif
+#if PL_NOF_KEYS>=2
   KEY_BTN2, /*!< button 2 */
+#endif
+#if PL_NOF_KEYS>=3
   KEY_BTN3, /*!< button 3 */
+#endif
+#if PL_NOF_KEYS>=4
   KEY_BTN4, /*!< button 4 */
+#endif
+#if PL_NOF_KEYS>=5
   KEY_BTN5, /*!< button 5 */
+#endif
+#if PL_NOF_KEYS>=6
   KEY_BTN6, /*!< button 6 */
-  KEY_BTN7  /*!< button 7 */
+#endif
+#if PL_NOF_KEYS>=7
+  KEY_BTN7, /*!< button 7 */
+#endif
+  KEY_BTN_LAST /*!< must be last */
 } KEY_Buttons;
 
 #if PL_NOF_KEYS>=1
@@ -100,6 +115,17 @@ typedef enum {
  * \param button Button for which interrupt has been generated.
  */
 void KEY_OnInterrupt(KEY_Buttons button);
+
+/*!
+ * \brief Acknowledge any pending interrupt, and enable again keyboard interrupts
+ */
+void KEY_EnableInterrupts(void);
+
+/*!
+ * \brief Acknowledge any pending interrupt, and enable again keyboard interrupts
+ */
+void KEY_DisableInterrupts(void);
+
 #endif
 
 /*!

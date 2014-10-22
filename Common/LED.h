@@ -1,10 +1,3 @@
-/*
- * LED.h
- *
- *  Created on: 26.09.2014
- *      Author: Imhof Dominik
- */
-
 /**
  * \file
  * \brief LED driver interface.
@@ -18,10 +11,7 @@
 #define LED_H_
 
 #include "Platform.h"
-#include "LED1.h"
 
-
-#if 0
 #if PL_NOF_LEDS >= 1
   #include "LedBit1.h"
   #define LED1_On()     LedBit1_ClrVal()
@@ -32,7 +22,7 @@
     /*!< Toggle LED 1 */
   #define LED1_Get()    LedBit1_GetVal()
     /*!< Return TRUE if LED is on, FALSE otherwise */
-  #define LED1_Put(val) LedBit1_PutVal(val)
+  #define LED1_Put(val) LedBit1_PutVal(!val)
     /*!< Turn LED on or off */
   #define LED1_Init()   /* do nothing */
     /*!< Initialize LED */
@@ -65,7 +55,7 @@
     /*!< Toggle LED 1 */
   #define LED2_Get()    LedBit2_GetVal()
     /*!< Return TRUE if LED is on, FALSE otherwise */
-  #define LED2_Put(val) LedBit2_PutVal(val)
+  #define LED2_Put(val) LedBit2_PutVal(!val)
     /*!< Turn LED on or off */
   #define LED2_Init()   /* do nothing */
     /*!< Initialize LED */
@@ -98,7 +88,7 @@
     /*!< Toggle LED 1 */
   #define LED3_Get()    LedBit3_GetVal()
     /*!< Return TRUE if LED is on, FALSE otherwise */
-  #define LED3_Put(val) LedBit3_PutVal(val)
+  #define LED3_Put(val) LedBit3_PutVal(!val)
     /*!< Turn LED on or off */
   #define LED3_Init()   /* do nothing */
     /*!< Initialize LED */
@@ -143,4 +133,3 @@ void LED_Init(void);
 void LED_Deinit(void);
 
 #endif /* LED_H_ */
-#endif

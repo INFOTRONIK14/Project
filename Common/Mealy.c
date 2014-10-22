@@ -61,11 +61,16 @@ typedef enum LED_Enum {
  \brief Enumeration of all our states in the state machine
 */
 typedef enum MealyState {
-  A=0, /*!< Original/Entry state: all LEDs are off */
-  B=1, /*!< first is on */
-  C=2, /*!< next is on */
-  D=3, /*!< next is on */
-  E=4  /*!< next is on */
+  A, /*!< Original/Entry state: all LEDs are off */
+  B, /*!< first is on */
+  C, /*!< next is on */
+  D, /*!< next is on */
+  E,  /*!< next is on */
+  F,  /*!< next is on */
+  G,  /*!< next is on */
+  H,  /*!< next is on */
+  I,  /*!< next is on */
+  J,  /*!< next is on */
 } MealyState; /*!< state machine states */
 
 /*!
@@ -83,6 +88,34 @@ static MealyState state; /*!< The current state of our machine */
 */
 #if PL_NOF_LEDS==1
 /*! \todo adopt for your number of LEDs */
+const uint8_t tbl[2][2][2] = /* format: {next,output} */
+/*     input a   input b */
+{
+/*A*/ {{A,0},    {B,LED1}},       /*!< State A: with input_a, remain in A; with input_b: go to B and turn on LED1 */
+/*B*/ {{A,0},    {B,LED1}}
+};
+#elif PL_NOF_LEDS==2
+const uint8_t tbl[3][2][2] = /* format: {next,output} */
+   /*     input a   input b */
+ {
+   /*A*/ {{A,0},    {B,LED1}},       /*!< State A: with input_a, remain in A; with input_b: go to B and turn on LED1 */
+   /*B*/ {{C,LED2}, {B,LED1}},
+   /*C*/ {{C,LED2}, {B,LED1}},
+ };
+#elif PL_NOF_LEDS==3
+const uint8_t tbl[9][2][2] = /* format: {next,output} */
+   /*     input a   input b */
+ {
+   /*A*/ {{A,0},    {B,LED1}},       /*!< State A: with input_a, remain in A; with input_b: go to B and turn on LED1 */
+   /*B*/ {{C,LED2}, {B,LED1}},
+   /*C*/ {{C,LED2}, {D,LED3}},
+   /*D*/ {{E,LED1}, {D,LED3}},
+   /*E*/ {{E,LED1}, {F,LED2}},
+   /*F*/ {{G,LED1}, {F,LED2}},
+   /*G*/ {{G,LED1}, {H,LED2}},
+   /*I*/ {{J,LED3}, {H,LED2}},
+   /*J*/ {{J,LED3}, {B,LED1}},
+ };
 #elif PL_NOF_LEDS==4
 const uint8_t tbl[5][2][2] = /* format: {next,output} */
    /*     input a   input b */
@@ -136,7 +169,7 @@ void MEALY_Step(void) {
 
   i = GetInput(); /* get input state */
   LEDPut(tbl[state][i][1]); /* output the next state */
-  state = (MealyState)(tbl[state][(uint8_t)i][0]);  /* read out next internal state */
+  state = (MealyState)(tbl[state][i][0]);  /* read out next internal state */
 }
 
 /*! \brief Initializes the Mealy state machine */

@@ -1,11 +1,3 @@
-/*
- * LED.c
- *
- *  Created on: 26.09.2014
- *      Author: Imhof Dominik
- */
-
-
 /**
  * \file
  * \brief LED driver implementation.
@@ -61,7 +53,7 @@ void LED_Init(void) {
  */
 void LED_Test(void) {
   bool isOn = TRUE;
-
+  
   LED1_On();
   LED2_On();
   LED3_On();
@@ -87,3 +79,4 @@ void LED_Test(void) {
     for(;;){}; /* error */
   }
 }
+

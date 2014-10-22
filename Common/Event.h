@@ -15,16 +15,46 @@
 
 #if PL_HAS_EVENTS
 
-typedef enum EVNT_Handle {  // hier werden neue events hinzugefügt
+typedef enum EVNT_Handle {
   EVNT_INIT,            /*!< System Initialization Event */
   EVENT_LED_HEARTBEAT,
+#if PL_NOF_KEYS >= 1
   EVNT_SW1_PRESSED,
+  EVNT_SW1_LPRESSED,
+  EVNT_SW1_RELEASED,
+#endif
+#if PL_NOF_KEYS >= 2
+  EVNT_SW2_PRESSED,
+  EVNT_SW2_LPRESSED,
+  EVNT_SW2_RELEASED,
+#endif
+#if PL_NOF_KEYS >= 3
+  EVNT_SW3_PRESSED,
+  EVNT_SW3_LPRESSED,
+  EVNT_SW3_RELEASED,
+#endif
+#if PL_NOF_KEYS >= 4
+  EVNT_SW4_PRESSED,
+  EVNT_SW4_LPRESSED,
+  EVNT_SW4_RELEASED,
+#endif
+#if PL_NOF_KEYS >= 5
+  EVNT_SW5_PRESSED,
+  EVNT_SW5_LPRESSED,
+  EVNT_SW5_RELEASED,
+#endif
+#if PL_NOF_KEYS >= 6
+  EVNT_SW6_PRESSED,
+  EVNT_SW6_LPRESSED,
+  EVNT_SW6_RELEASED,
+#endif
+#if PL_NOF_KEYS >= 7
+  EVNT_SW7_PRESSED,
+  EVNT_SW7_LPRESSED,
+  EVNT_SW7_RELEASED,
+#endif
   EVNT_NOF_EVENTS       /*!< Must be last one! */
 } EVNT_Handle;
-
-
-
-
 
 /*!
  * \brief Sets an event.

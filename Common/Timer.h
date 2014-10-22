@@ -10,7 +10,7 @@
 #define TIMER_H_
 
 #define TMR_TICK_MS  10
-  /*!< we get called every x ms */
+  /*!< we get called every TMR_TICK_MS ms */
 
 /*! \brief Function called from timer interrupt every TMR_TICK_MS. */
 void TMR_OnInterrupt(void);

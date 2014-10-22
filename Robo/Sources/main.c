@@ -1,10 +1,10 @@
 /* ###################################################################
 **     Filename    : main.c
-**     Project     : Robo
+**     Project     : INTRO_Robo
 **     Processor   : MK22FX512VLQ12
 **     Version     : Driver 01.01
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2014-09-19, 13:50, # CodeGen: 0
+**     Date/Time   : 2014-09-14, 14:51, # CodeGen: 0
 **     Abstract    :
 **         Main module.
 **         This module contains user's application code.
@@ -31,14 +31,25 @@
 #include "Cpu.h"
 #include "Events.h"
 #include "WAIT1.h"
-#include "CS1.h"
 #include "HF1.h"
+#include "CS1.h"
+#include "LedBit1.h"
+#include "BitIoLdd1.h"
+#include "TI1.h"
+#include "TimerIntLdd1.h"
+#include "TU1.h"
+#include "SW1.h"
+#include "ExtIntLdd1.h"
+#include "BUZ1.h"
+#include "BitIoLdd3.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
 /* User includes (#include below this line is not maintained by Processor Expert) */
+#include "Application.h"
+#include "Test.h"
 
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
@@ -50,8 +61,7 @@ int main(void)
   PE_low_level_init();
   /*** End of Processor Expert internal initialization.                    ***/
 
-  /* Write your code here */
-  /* For example: for(;;) { } */
+  APP_Start();
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/

@@ -1,16 +1,9 @@
-/*
- * Application.h
- *
- *  Created on: 26.09.2014
- *      Author: Imhof Dominik
- */
-
 /**
  * \file
  * \brief Main Application Interface.
  * \author Erich Styger, erich.styger@hslu.ch
  *
- * Interface to the main application module.
+ * Interface to the main application module. 
  * From here the application runs and performs all tasks.
  */
 
@@ -18,7 +11,7 @@
 #define APPLICATION_H_
 
 /*!
- * \brief Application main start and main routine
+ * \brief Application main start and main routine 
  */
 void APP_Start(void);
 
