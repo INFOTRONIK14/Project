@@ -22,7 +22,11 @@
 #if PL_HAS_KEYS
   #include "Keys.h"
 #endif
+#if PL_HAS_BUZZER
+  #include "Buzzer.h"
+#endif
 #include "Test.h"
+
 
 void TestFunction(void) {
 }
@@ -43,12 +47,17 @@ static void APP_EventHandler(EVNT_Handle event) {
       LED3_On();
       WAIT1_Waitms(50);
       LED3_Off();
+#if PL_HAS_BUZZER
+      //BUZ_Beep(900,2000);
+#endif
       break;
     case EVENT_LED_HEARTBEAT:
+    	BUZ_Beep(900,500);
       LED1_Neg();
       break;
     case EVNT_SW1_PRESSED:
       lastKeyPressed = 1;
+      //BUZ_Beep(900,2000);
       //LED1_On();
       break;
 #if PL_NOF_KEYS >= 2

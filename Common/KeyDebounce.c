@@ -207,7 +207,7 @@ static DBNC_FSMData KEYDBNC_FSMdata = {
   (500/TRG_TICKS_MS), /* longKeyTicks for 500 ms */
 };
 
-void KEYDBNC_Process(void) {
+void KEYDBNC_Process(void) { // startet die debounce statemachine. geht nur in statemachine rein, wenn ich nicht am debouncen bin im ersten if.
   /** \todo call DBNC_Process(&KEY_FSMdata);
    * But be careful: only if we are not debouncing, and if we have a key press if we are polling
    */

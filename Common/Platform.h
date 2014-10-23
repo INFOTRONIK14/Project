@@ -42,8 +42,10 @@
   /*!< Set to 1 to enable triggers, 0 otherwise */
 #define PL_HAS_BUZZER         (1 && PL_HAS_TRIGGER && PL_IS_ROBO)
   /*!< Set to 1 to enable buzzer, 0 otherwise */
-#define PL_HAS_DEBOUNCE       (0 && PL_HAS_KEYS)
+#define PL_HAS_DEBOUNCE       (1 && PL_HAS_KEYS)
   /*!< Set to 1 to enable triggers, 0 otherwise */
+#define PL_HAS_RTOS           (1)
+  /*!< Set to 1 to enable RTOS, 0 otherwise */
 
 /* additional hardware configuration */
 
@@ -62,7 +64,7 @@
 
 #if PL_IS_FRDM
   #if PL_HAS_JOYSTICK
-    #define PL_NOF_LEDS       (2)
+    #define PL_NOF_LEDS       (3)
       /*!< FRDM board has 2 LEDs (red is used by joystick shield) */
     #define PL_NOF_KEYS       (7)
        /*!< FRDM board has no keys without joystick shield */
