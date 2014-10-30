@@ -3,7 +3,7 @@
   <Header>
     <Name>Robo</Name>
     <SavedBy>Louis</SavedBy>
-    <ModificationStamp>6</ModificationStamp>
+    <ModificationStamp>5</ModificationStamp>
     <Date>2014-10-22</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.10.0.RT6_b1428-0121</PEversion>
@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>27</ProjectCompNumb>
+    <ProjectCompNumb>24</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -22633,11 +22633,11 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>NegVal</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>0</Index>
-              <Value>true</Value>
+              <Index>1</Index>
+              <Value>false</Value>
               <LastSelection>false</LastSelection>
               <LastUserSel>no</LastUserSel>
               <UsrMethodName>NegVal</UsrMethodName>
@@ -22864,10 +22864,10 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
+        <Index>1</Index>
+        <Value>false</Value>
         <LastSelection>true</LastSelection>
-        <LastUserSel>yes</LastUserSel>
+        <LastUserSel>no</LastUserSel>
         <UsrMethodName>NegVal</UsrMethodName>
       </ItemState>
       <ItemState>
@@ -23119,7 +23119,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>Deinit</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -23130,7 +23130,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>GetDir</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -23152,7 +23152,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>SetInput</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -23163,7 +23163,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>SetOutput</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -23218,7 +23218,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>NegVal</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -23234,7 +23234,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>ConnectPin</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -23250,7 +23250,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>GetRawVal</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -24970,7 +24970,7 @@
               <ItemSymbol>IntPeriodTmg</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>init:10 ms;prec:5%;RTS:none;clksrc_presc[SpeedMode0]Auto select;clksrc_presc[SpeedMode1]Auto select;clksrc_presc[SpeedMode2]Auto select;clksrc_presc[SpeedMode3]Auto select;clksrc_presc[SpeedMode4]Auto select;clksrc_presc[SpeedMode5]Auto select;clksrc_presc[SpeedMode6]Auto select;clksrc_presc[SpeedMode7]Auto select</Value>
+              <Value>init:;prec:5%;RTS:none;clksrc_presc[SpeedMode0]Auto select;clksrc_presc[SpeedMode1]Auto select;clksrc_presc[SpeedMode2]Auto select;clksrc_presc[SpeedMode3]Auto select;clksrc_presc[SpeedMode4]Auto select;clksrc_presc[SpeedMode5]Auto select;clksrc_presc[SpeedMode6]Auto select;clksrc_presc[SpeedMode7]Auto select</Value>
               <RuntimeSetting>0</RuntimeSetting>
               <ReqDevPrescHigh>-1</ReqDevPrescHigh>
               <ReqDevPrescLow>-1</ReqDevPrescLow>
@@ -25617,7 +25617,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
+        <Index>2</Index>
         <EnumSymbVal>0</EnumSymbVal>
       </ItemState>
       <ItemState>
@@ -25772,7 +25772,7 @@
         <ItemSymbol>Tmg_Period</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value />
+        <Value>init:;prec:5%;RTS:none;clksrc_presc[SpeedMode0]Auto select;clksrc_presc[SpeedMode1]Auto select;clksrc_presc[SpeedMode2]Auto select;clksrc_presc[SpeedMode3]Auto select;clksrc_presc[SpeedMode4]Auto select;clksrc_presc[SpeedMode5]Auto select;clksrc_presc[SpeedMode6]Auto select;clksrc_presc[SpeedMode7]Auto select</Value>
         <RuntimeSetting>0</RuntimeSetting>
         <ReqDevPrescHigh>-1</ReqDevPrescHigh>
         <ReqDevPrescLow>-1</ReqDevPrescLow>
@@ -26354,10 +26354,10 @@
         <ReadOnly>true</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
         <LastSelection>true</LastSelection>
-        <LastUserSel>never</LastUserSel>
+        <LastUserSel>yes</LastUserSel>
       </ItemState>
       <ItemState>
         <ItemSymbol>OnCounterRestartName</ItemSymbol>
@@ -26698,7 +26698,7 @@
         <ItemSymbol>Tmg_Period</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>init:10 ms;prec:5%;RTS:none;clksrc_presc[SpeedMode0]Auto select;clksrc_presc[SpeedMode1]Auto select;clksrc_presc[SpeedMode2]Auto select;clksrc_presc[SpeedMode3]Auto select;clksrc_presc[SpeedMode4]Auto select;clksrc_presc[SpeedMode5]Auto select;clksrc_presc[SpeedMode6]Auto select;clksrc_presc[SpeedMode7]Auto select</Value>
+        <Value>init:;prec:5%;RTS:none;clksrc_presc[SpeedMode0]Auto select;clksrc_presc[SpeedMode1]Auto select;clksrc_presc[SpeedMode2]Auto select;clksrc_presc[SpeedMode3]Auto select;clksrc_presc[SpeedMode4]Auto select;clksrc_presc[SpeedMode5]Auto select;clksrc_presc[SpeedMode6]Auto select;clksrc_presc[SpeedMode7]Auto select</Value>
         <RuntimeSetting>0</RuntimeSetting>
         <ReqDevPrescHigh>-1</ReqDevPrescHigh>
         <ReqDevPrescLow>-1</ReqDevPrescLow>
@@ -26778,7 +26778,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterInt</ItemSymbol>
