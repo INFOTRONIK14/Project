@@ -60,7 +60,7 @@ void KEY_Scan(void) {
 #endif /* PL_HAS_DEBOUNCE */
 }
 
-#if PL_HAS_KBI
+#if PL_HAS_KBI   // hier entweder mit key debounce statemachine oder normal ohne debouncen
 void KEY_OnInterrupt(KEY_Buttons button) {
   /*! \todo will need to implement functionality for interrupts */
 #if PL_HAS_DEBOUNCE
