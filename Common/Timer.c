@@ -18,6 +18,10 @@
 #if PL_HAS_TRIGGER
   #include "Trigger.h"
 #endif
+#if PL_HAS_MOTOR_TACHO
+  #include "Tacho.h"
+#endif
+#include "TMOUT1.h"
 
 void TMR_OnInterrupt(void) {
   /* this one gets called from an interrupt!!!! */
@@ -34,6 +38,10 @@ void TMR_OnInterrupt(void) {
   }
 #if PL_HAS_TRIGGER
   TRG_IncTick();
+#endif
+  TMOUT1_AddTick();
+#if PL_HAS_MOTOR_TACHO
+  TACHO_Sample();
 #endif
 }
 

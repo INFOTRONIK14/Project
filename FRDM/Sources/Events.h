@@ -36,11 +36,10 @@
 #include "IO_Map.h"
 #include "LedBit2.h"
 #include "BitIoLdd2.h"
+#include "BitIoLdd3.h"
 #include "SW2.h"
 #include "ExtIntLdd2.h"
-#include "LedBit3.h"
-#include "BitIoLdd3.h"
-#include "BitIoLdd1.h"
+#include "LedBit1.h"
 #include "LedBit1.h"
 #include "SW3.h"
 #include "ExtIntLdd3.h"
@@ -48,23 +47,40 @@
 #include "SW4.h"
 #include "ExtIntLdd4.h"
 #include "SW5.h"
-#include "BitIoLdd9.h"
+#include "BitIoLdd8.h"
 #include "SW6.h"
-#include "BitIoLdd10.h"
+#include "BitIoLdd9.h"
 #include "SW7.h"
-#include "ExtIntLdd6.h"
+#include "ExtIntLdd5.h"
+#include "AD1.h"
+#include "AdcLdd1.h"
 #include "AS1.h"
 #include "ASerialLdd1.h"
 #include "UTIL1.h"
 #include "CLS1.h"
-#include "KSDK1.h"
-#include "SW3.h"
-#include "ExtIntLdd3.h"
-#include "ExtIntLdd2.h"
-#include "SW2.h"
-#include "TI1.h"
-#include "TimerIntLdd1.h"
-#include "TU1.h"
+#include "FRTOS1.h"
+#include "RTOSCNTRLDD1.h"
+#include "USB1.h"
+#include "USB0.h"
+#include "CDC1.h"
+#include "Tx1.h"
+#include "Rx1.h"
+#include "IFsh1.h"
+#include "IntFlashLdd1.h"
+#include "TMOUT1.h"
+#include "I2C1.h"
+#include "GI2C1.h"
+#include "MMA1.h"
+#include "RF1.h"
+#include "CE1.h"
+#include "BitIoLdd11.h"
+#include "BitIoLdd12.h"
+#include "CSN1.h"
+#include "BitIoLdd13.h"
+#include "RNET1.h"
+#include "SM1.h"
+#include "SMasterLdd1.h"
+#include "KIN1.h"
 #include "WAIT1.h"
 #include "HF1.h"
 #include "CS1.h"
@@ -175,6 +191,92 @@ void SW4_OnInterrupt(void);
 */
 /* ===================================================================*/
 void Cpu_OnNMIINT(void);
+
+void FRTOS1_vApplicationStackOverflowHook(xTaskHandle pxTask, char *pcTaskName);
+/*
+** ===================================================================
+**     Event       :  FRTOS1_vApplicationStackOverflowHook (module Events)
+**
+**     Component   :  FRTOS1 [FreeRTOS]
+**     Description :
+**         if enabled, this hook will be called in case of a stack
+**         overflow.
+**     Parameters  :
+**         NAME            - DESCRIPTION
+**         pxTask          - Task handle
+**       * pcTaskName      - Pointer to task name
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void FRTOS1_vApplicationMallocFailedHook(void);
+/*
+** ===================================================================
+**     Event       :  FRTOS1_vApplicationMallocFailedHook (module Events)
+**
+**     Component   :  FRTOS1 [FreeRTOS]
+**     Description :
+**         If enabled, the RTOS will call this hook in case memory
+**         allocation failed.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void FRTOS1_vApplicationTickHook(void);
+/*
+** ===================================================================
+**     Event       :  FRTOS1_vApplicationTickHook (module Events)
+**
+**     Component   :  FRTOS1 [FreeRTOS]
+**     Description :
+**         If enabled, this hook will be called by the RTOS for every
+**         tick increment.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void FRTOS1_vApplicationIdleHook(void);
+/*
+** ===================================================================
+**     Event       :  FRTOS1_vApplicationIdleHook (module Events)
+**
+**     Component   :  FRTOS1 [FreeRTOS]
+**     Description :
+**         If enabled, this hook will be called when the RTOS is idle.
+**         This might be a good place to go into low power mode.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void RTOSTRC1_OnTraceWrap(void);
+/*
+** ===================================================================
+**     Event       :  RTOSTRC1_OnTraceWrap (module Events)
+**
+**     Component   :  RTOSTRC1 [PercepioTrace]
+**     Description :
+**         Called for trace ring buffer wrap around. This gives the
+**         application a chance to dump the trace buffer.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void GI2C1_OnError(void);
+/*
+** ===================================================================
+**     Event       :  GI2C1_OnError (module Events)
+**
+**     Component   :  GI2C1 [GenericI2C]
+**     Description :
+**         Event called in case of error condition
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
 
 /*
 ** ===================================================================

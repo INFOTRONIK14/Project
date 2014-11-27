@@ -60,7 +60,7 @@ void KEY_Scan(void) {
 #endif /* PL_HAS_DEBOUNCE */
 }
 
-#if PL_HAS_KBI   // hier entweder mit key debounce statemachine oder normal ohne debouncen
+#if PL_HAS_KBI
 void KEY_OnInterrupt(KEY_Buttons button) {
   /*! \todo will need to implement functionality for interrupts */
 #if PL_HAS_DEBOUNCE
@@ -104,6 +104,11 @@ void KEY_EnableInterrupts(void) {
 #endif
 #if PL_NOF_KEYS >= 3 && !PL_KEY_POLLED_KEY3
   SW3_Enable();
+#if PL_HAS_KBI_NMI
+  /* necessary to clear interrupts on Port A */
+  PORT_PDD_ClearPinInterruptFlag(PORTA_BASE_PTR, ExtIntLdd4_PIN_INDEX);
+  PORT_PDD_SetPinInterruptConfiguration(PORTA_BASE_PTR, 4, PORT_PDD_DMA_ON_FALLING);
+#endif
 #endif
 #if PL_NOF_KEYS >= 4 && !PL_KEY_POLLED_KEY4
   SW4_Enable();
@@ -128,6 +133,9 @@ void KEY_DisableInterrupts(void) {
 #endif
 #if PL_NOF_KEYS >= 3 && !PL_KEY_POLLED_KEY3
   SW3_Disable();
+#if PL_HAS_KBI_NMI
+  PORT_PDD_SetPinInterruptConfiguration(PORTA_BASE_PTR, 4, PORT_PDD_INTERRUPT_DMA_DISABLED);
+#endif
 #endif
 #if PL_NOF_KEYS >= 4 && !PL_KEY_POLLED_KEY4
   SW4_Disable();
