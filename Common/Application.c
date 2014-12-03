@@ -39,6 +39,10 @@
   #include "Accel.h"
 #endif
 #include "Test.h"
+#include "Motor.h"
+#include "StateMachine.h"
+
+
 
 void APP_DebugPrint(unsigned char *str) {
 #if PL_HAS_SHELL
@@ -50,7 +54,9 @@ void APP_DebugPrint(unsigned char *str) {
 void HandleEvents(void) {
   if (EVNT_EventIsSetAutoClear(EVNT_INIT)) {
 #if PL_HAS_BUZZER
-      BUZ_Beep(300, 1000);
+      BUZ_Beep(300, 500);
+      //StateMachine_Run();
+      //Motor_Test();
 #endif
       LED1_On();
       WAIT1_Waitms(50);
@@ -70,8 +76,13 @@ void HandleEvents(void) {
   #endif
   #if PL_HAS_BUZZER
       BUZ_Beep(300, 500);
+      Calibration_Run();
   #endif
   } else if (EVNT_EventIsSetAutoClear(EVNT_SW1_LPRESSED)) {
+
+	  StateMachine_Init();
+	  //Motor_Run();
+
   #if PL_HAS_SHELL
       SHELL_SendString("SW1 long pressed!\r\n");
   #endif
@@ -337,7 +348,8 @@ void APP_Start(void) {
   //TEST_Test();
   EVNT_SetEvent(EVNT_INIT); /* set initial event */
 #if PL_HAS_RTOS
-  if (FRTOS1_xTaskCreate(AppTask, (signed portCHAR *)"App", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS) {
+  if (FRTOS1_xTaskCreate(AppTask, (signed portCHAR *)"App", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
+  {
     for(;;){} /* error */
   }
   RTOS_Run();

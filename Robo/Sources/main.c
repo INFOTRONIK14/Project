@@ -60,7 +60,7 @@
 #include "PWMR.h"
 #include "PwmLdd1.h"
 #include "DIRR.h"
-#include "BitIoLdd13.h"
+//#include "BitIoLdd13.h"
 #include "PWML.h"
 #include "PwmLdd2.h"
 #include "IFsh1.h"
@@ -114,7 +114,7 @@
 #include "IR4.h"
 #include "BitIoLdd9.h"
 #include "IR5.h"
-#include "BitIoLdd10.h"
+//#include "BitIoLdd10.h"
 #include "IR6.h"
 #include "BitIoLdd11.h"
 /* Including shared modules, which are used for whole project */

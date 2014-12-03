@@ -84,6 +84,8 @@ void PID_SpeedCfg(int32_t currSpeed, int32_t setSpeed, bool isLeft, PID_Config *
   MOT_UpdatePercent(motHandle, direction);
 }
 
+
+
 void PID_Speed(int32_t currSpeed, int32_t setSpeed, bool isLeft) {
   if (isLeft) {
     PID_SpeedCfg(currSpeed, setSpeed, isLeft, &speedLeftConfig);
@@ -283,10 +285,10 @@ void PID_Init(void) {
   speedRightConfig.lastError = 0;
   speedRightConfig.integral = 0;
 #else
-  speedLeftConfig.pFactor100 = 1000;
-  speedLeftConfig.iFactor100 = 45;
+  speedLeftConfig.pFactor100 = 3000;
+  speedLeftConfig.iFactor100 = 10;
   speedLeftConfig.dFactor100 = 0;
-  speedLeftConfig.iAntiWindup = 120000;
+  speedLeftConfig.iAntiWindup = 200000;
   speedLeftConfig.lastError = 0;
   speedLeftConfig.integral = 0;
 

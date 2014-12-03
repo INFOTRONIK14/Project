@@ -54,7 +54,7 @@
   /*!< Set to 1 if using USB CDC, 0 otherwise */
 #define PL_HAS_BLUETOOTH      (1 && PL_IS_ROBO)
   /*!< Set to 1 if using Bluetooth, 0 otherwise */
-#define PL_HAS_SHELL_QUEUE    (1 && PL_HAS_SHELL)
+#define PL_HAS_SHELL_QUEUE    (0 && PL_HAS_SHELL)
   /*!< Set to 1 if using shell queues, 0 otherwise */
 #define PL_HAS_SEMAPHORE      (1)
   /*!< Set to 1 if using semaphore labs, 0 otherwise */
@@ -66,11 +66,11 @@
   /*!< Set to 1 if using motors, 0 otherwise */
 #define PL_HAS_CONFIG_NVM     (1)
   /*!< Set to 1 if using NVMC, 0 otherwise */
-#define PL_HAS_MCP4728        (1 && PL_IS_ROBO)
+#define PL_HAS_MCP4728        (0 && PL_IS_ROBO)
   /*!< Set to 1 if using MCP4728, 0 otherwise */
-#define PL_HAS_QUAD_CALIBRATION (1 && PL_HAS_MCP4728)
+#define PL_HAS_QUAD_CALIBRATION (0 && PL_HAS_MCP4728)
   /*!< Set to 1 if using quadrature calibration, 0 otherwise */
-#define PL_HAS_QUADRATURE     (1 && PL_IS_ROBO)
+#define PL_HAS_QUADRATURE     (0 && PL_IS_ROBO)
   /*!< Set to 1 if using quadrature counters, 0 otherwise */
 #define PL_HAS_MOTOR_TACHO    (1 && PL_HAS_QUADRATURE)
   /*!< Set to 1 if using speed estimation, 0 otherwise */
@@ -80,13 +80,14 @@
   /*!< Set to 1 if using PID, 0 otherwise */
 #define PL_HAS_ULTRASONIC     (1 && PL_IS_ROBO)
   /*!< Set to 1 if using ultrasonic sensor, 0 otherwise */
-#define PL_HAS_ACCEL          (0)
+#define PL_HAS_ACCEL          (1)
   /*!< Set to 1 if using an accelerometer, 0 otherwise */
 #define PL_HAS_ACCEL_STOP     (1 && PL_HAS_ACCEL && PL_HAS_MOTOR && PL_IS_ROBO)
   /*!< Set to 1 if stopping robot with accelerometer, 0 otherwise */
-#define PL_HAS_RADIO          (0)
+#define PL_HAS_RADIO          (1)
   /*!< Set to 1 if using an radio transceiver, 0 otherwise */
 #define PL_HAS_REMOTE         (0 && PL_HAS_RADIO && PL_HAS_ACCEL)
+
 #define PL_APP_ACCEL_CONTROL_SENDER (PL_HAS_REMOTE && PL_IS_FRDM)
 
 #define PL_HAS_RTOS_TRACE     (0 && PL_HAS_RTOS && configUSE_TRACE_HOOKS)

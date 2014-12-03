@@ -145,6 +145,9 @@ static void REF_CalibrateMinMax(SensorTimeType min[REF_NOF_SENSORS], SensorTimeT
   }
 }
 
+
+
+
 static void ReadCalibrated(SensorTimeType calib[REF_NOF_SENSORS], SensorTimeType raw[REF_NOF_SENSORS]) {
   int i;
   int32_t x, denominator;
@@ -267,6 +270,8 @@ static void REF_StateMachine(void) {
       refState = REF_STATE_NOT_CALIBRATED;
       break;
       
+
+      // SW1 pressen, dann kommt er da rein.
     case REF_STATE_NOT_CALIBRATED:
       REF_MeasureRaw(SensorRaw);
       /*! \todo Add a new event to your event module...*/

@@ -110,6 +110,13 @@ MOT_Direction MOT_GetDirection(MOT_MotorDevice *motor) {
   }
 }
 
+/*void Motor_Test(void){
+	MOT_Init();
+MOT_SetDirection(&motorL, MOT_DIR_FORWARD);
+MOT_SetSpeedPercent(&motorL, (MOT_SpeedPercent)20);
+}*/
+
+
 #if PL_HAS_SHELL
 static void MOT_PrintHelp(const CLS1_StdIOType *io) {
   CLS1_SendHelpStr((unsigned char*)"motor", (unsigned char*)"Group of motor commands\r\n", io->stdOut);
