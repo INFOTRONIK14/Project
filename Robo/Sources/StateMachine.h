@@ -11,6 +11,6 @@
 
 void Calibration_Run(void);
 void Motor_Run(void);
-StateMachine_Init(void);
+void StateMachine_Init(void);
 
 #endif /* STATEMACHINE_H_ */

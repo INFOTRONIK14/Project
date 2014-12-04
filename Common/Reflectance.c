@@ -147,6 +147,14 @@ static void REF_CalibrateMinMax(SensorTimeType min[REF_NOF_SENSORS], SensorTimeT
 
 
 
+// eigene Methode zm auslesen der Werte für statemachine
+int Get_Reflectance_Values(int i){
+
+	return SensorCalibrated[i];
+
+}
+
+
 
 static void ReadCalibrated(SensorTimeType calib[REF_NOF_SENSORS], SensorTimeType raw[REF_NOF_SENSORS]) {
   int i;

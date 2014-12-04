@@ -34,6 +34,8 @@
  */
 void REF_Deinit(void);
 
+int Get_Reflectance_Values(int i);
+
 /*!
  * \brief Driver Initialization.
  */

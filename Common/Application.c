@@ -54,7 +54,7 @@ void APP_DebugPrint(unsigned char *str) {
 void HandleEvents(void) {
   if (EVNT_EventIsSetAutoClear(EVNT_INIT)) {
 #if PL_HAS_BUZZER
-      BUZ_Beep(300, 500);
+      BUZ_Beep(400, 700);
       //StateMachine_Run();
       //Motor_Test();
 #endif
@@ -71,17 +71,26 @@ void HandleEvents(void) {
     LED1_Neg();
 #if PL_NOF_KEYS >= 1
   } else if (EVNT_EventIsSetAutoClear(EVNT_SW1_PRESSED)) {
+
+	  Calibration_Run();
+
   #if PL_HAS_SHELL
       SHELL_SendString("SW1 pressed!\r\n");
+
   #endif
   #if PL_HAS_BUZZER
       BUZ_Beep(300, 500);
-      Calibration_Run();
+      //StateMachine_Init(); // StateMachine Startet
+
   #endif
   } else if (EVNT_EventIsSetAutoClear(EVNT_SW1_LPRESSED)) {
 
-	  StateMachine_Init();
+
 	  //Motor_Run();
+
+	  //Calibration_Run();
+
+	  StateMachine_Init();
 
   #if PL_HAS_SHELL
       SHELL_SendString("SW1 long pressed!\r\n");
