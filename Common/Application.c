@@ -73,6 +73,7 @@ void HandleEvents(void) {
   } else if (EVNT_EventIsSetAutoClear(EVNT_SW1_PRESSED)) {
 
 	  Calibration_Run();
+	  //StateMachine_Init();
 
   #if PL_HAS_SHELL
       SHELL_SendString("SW1 pressed!\r\n");
@@ -86,10 +87,8 @@ void HandleEvents(void) {
   } else if (EVNT_EventIsSetAutoClear(EVNT_SW1_LPRESSED)) {
 
 
-	  //Motor_Run();
 
 	  //Calibration_Run();
-
 	  StateMachine_Init();
 
   #if PL_HAS_SHELL

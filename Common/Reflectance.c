@@ -120,9 +120,10 @@ static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
     cnt = 0;
     for(i=0;i<REF_NOF_SENSORS;i++) {
       if (raw[i]==MAX_SENSOR_VALUE) { /* not measured yet? */
-        if (SensorFctArray[i].GetVal()==0) {
+        if (SensorFctArray[i].GetVal()==0  || 0x2000 <= RefCnt_GetCounterValue(timerHandle)) {
           raw[i] = RefCnt_GetCounterValue(timerHandle);
         }
+
       } else { /* have value */
         cnt++;
       }

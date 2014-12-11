@@ -16,6 +16,7 @@
 #include "Ultrasonic.h"
 #include "Reflectance.h"
 #include "WAIT1.h"
+#include "Drive.h"
 
 
 typedef enum {
@@ -60,23 +61,31 @@ void Motor_Run(void){
 static void StateMachine_Run(void){
 
 
-
 	  int i;
+	  int distance;
+
+	  // Für Acceleration Sensor
+	  int16_t x = MMA1_GetXmg();
+	  WAIT1_Waitms(5);
+	  int16_t y = MMA1_GetYmg();
+
 
 	  switch (state) {
 	    case START:
 	      //SHELL_SendString((unsigned char*)"INFO: No calibration data present.\r\n");
 
-	    		WAIT1_Waitms(2000);
-	    	    MOT_SetDirection(MOT_GetMotorHandle(MOT_MOTOR_LEFT), MOT_DIR_FORWARD);
-	    		MOT_SetDirection(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), MOT_DIR_FORWARD);
-	    		MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), 30);
-	    		MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), 30);
+	    		WAIT1_Waitms(4000);
+
+	    		DRV_EnableDisable(1);
+	    		DRV_SetSpeed(-1500,1500) ;
+	    	   // MOT_SetDirection(MOT_GetMotorHandle(MOT_MOTOR_LEFT), MOT_DIR_FORWARD);
+	    		//MOT_SetDirection(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), MOT_DIR_FORWARD);
+	    		//MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), 30);
+	    		//MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), 30);
 	    		//MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), 40);
 
-	    		if(((US_usToCentimeters(US_Measure_us(),22)<=30) != 0)){
-	    			//state = DRIVE;
-	    		}
+
+
 
 
 	    		/*int x0;
@@ -96,57 +105,148 @@ static void StateMachine_Run(void){
 	    		//calib_values_pointer = &SensorTimeType;
 	    		//calib_values_pointer = S1_GetVal();
 
+	    		state = DRIVE;
+
 	      break;
 
 
 	    case DRIVE:
 
+	    	DRV_SetSpeed(-1500,1500);
 
-	    	MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), 30);
-	    	MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), 30);
+	    	//MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), 40);
+	    	//MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), 40);
 
 
-	    	if(Get_Reflectance_Values(4) <= 100) // 0 = weiss / 1000 = schwarz
+	    	if((Get_Reflectance_Values(0) <= 100) || (Get_Reflectance_Values(5) <= 100)) // 0 = weiss / 1000 = schwarz
 	    	{
-	    		state = STOP;
-	    		    		}
+	    		state = TURN;
 
-
-	    	//if(accel)
-	    	{
-	        state = STOP;
-
+	    		break;
 	    	}
 
-	        state = REFLECTANCE;
-	        state = ULTRASONIC;
 
-	        break;
 
-	      break;
+	    	distance = US_usToCentimeters(US_Measure_us(),22);
+
+	        if((distance <= 30) && (distance != 0)){
+
+	    		    		state = ATTACK;
+	    		    	}
+
+
+
+/*
+	    	if((x >= 2000) || (x <= 2000))
+
+	    	{
+	    		state = STOP;
+	    	}
+
+
+	    	if((y >= 2000) || (y <= 2000))
+
+	    	{
+	    		state = STOP;
+	    	}
+*/
+
+
+
+	    	break;
+
+
 
 	    case TURN:
-	      //SHELL_SendString((unsigned char*)"start calibration...\r\n");
-
-// umdrehen
-
-
-	      state = DRIVE;
-	      break;
-
-	    case STOP:
 	    	      //SHELL_SendString((unsigned char*)"...stopping calibration.\r\n");
-	    	MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), 0);
-	    	MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), 0);
+	    	//MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), -40);
+	    	//MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), -40);
 	    	    	// ATTACK
+	    	DRV_SetSpeed(-3000,-3000);
 
-	    	if(Get_Reflectance_Values(4) >= 100)
+	    	WAIT1_Waitms(150);
+
+
+/*
+	    	MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), -40);
+	    	MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), 40);
+	    	*/
+	    	DRV_SetSpeed(3000,-3000);
+
+	    	WAIT1_Waitms(400);
+
+	    	DRV_SetSpeed(3000,3000);
+
+	    	WAIT1_Waitms(600);
+
+	    	if((Get_Reflectance_Values(0) > 400) || (Get_Reflectance_Values(5) > 500))
 	    		    	{
 	    		    		state = DRIVE;
 	    		    	}
-	       break;
 
-	  } /* switch */
+
+
+
+
+	    	break;
+
+	    case ATTACK:
+
+
+	    	DRV_SetSpeed(5500,5500);
+	    	//MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), 80);
+	        //MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), 80);
+
+	        if((Get_Reflectance_Values(0) <= 100) || (Get_Reflectance_Values(5) <= 100)) // 0 = weiss / 1000 = schwarz
+	        	    	{
+	        	    		state = TURN;
+
+	        	    	}
+
+
+/*
+
+	        if((x >= 2000) || (x <= -2000))
+
+	        	    	{
+	        	    		state = STOP;
+	        	    	}
+
+
+	        if((y>= 2000) || (y <= -2000))
+
+	        	    	{
+	        	    		state = STOP;
+	        	    	}
+
+*/
+
+
+	   	    	break;
+
+	    case STOP:
+
+
+	    	DRV_SetSpeed(0,0);
+	    	/*MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), 0);
+	    	MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), 0);*/
+
+
+/*
+
+	    	if((x >= -300) && (x <= 300))
+	    	{
+	    		if((y >= -300) && (y <= 300))
+	    		{
+	    			    state = DRIVE;
+	    		}
+	    	}
+	    	*/
+
+	   	   	    	break;
+
+
+	  } /* whitch */
 	}
 
 
