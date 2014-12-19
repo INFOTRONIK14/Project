@@ -74,10 +74,15 @@ static void StateMachine_Run(void){
 	    case START:
 	      //SHELL_SendString((unsigned char*)"INFO: No calibration data present.\r\n");
 
-	    		WAIT1_Waitms(4000);
+	    		WAIT1_Waitms(4700);
 
 	    		DRV_EnableDisable(1);
-	    		DRV_SetSpeed(-1500,1500) ;
+	    		DRV_SetSpeed(3000,3000);
+	    		//WAIT1_Waitms(40);
+	    		//DRV_SetSpeed(3000,3000);
+	    		//state = ATTACK;
+
+	    		//DRV_SetSpeed(-4200,4200);
 	    	   // MOT_SetDirection(MOT_GetMotorHandle(MOT_MOTOR_LEFT), MOT_DIR_FORWARD);
 	    		//MOT_SetDirection(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), MOT_DIR_FORWARD);
 	    		//MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), 30);
@@ -112,7 +117,7 @@ static void StateMachine_Run(void){
 
 	    case DRIVE:
 
-	    	DRV_SetSpeed(-1500,1500);
+	    	DRV_SetSpeed(-4200,4200);
 
 	    	//MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), 40);
 	    	//MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), 40);
@@ -162,29 +167,27 @@ static void StateMachine_Run(void){
 	    	//MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), -40);
 	    	//MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), -40);
 	    	    	// ATTACK
-	    	DRV_SetSpeed(-3000,-3000);
+	    	DRV_SetSpeed(-5000,-5000);
 
-	    	WAIT1_Waitms(150);
+	    	WAIT1_Waitms(500);
 
 
 /*
 	    	MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), -40);
 	    	MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), 40);
 	    	*/
-	    	DRV_SetSpeed(3000,-3000);
+	    	DRV_SetSpeed(4200,-4200);
 
-	    	WAIT1_Waitms(400);
+	    	WAIT1_Waitms(300);
 
-	    	DRV_SetSpeed(3000,3000);
+	    	DRV_SetSpeed(5000,5000);
 
-	    	WAIT1_Waitms(600);
+	    	WAIT1_Waitms(50);
 
 	    	if((Get_Reflectance_Values(0) > 400) || (Get_Reflectance_Values(5) > 500))
 	    		    	{
 	    		    		state = DRIVE;
 	    		    	}
-
-
 
 
 

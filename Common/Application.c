@@ -72,8 +72,8 @@ void HandleEvents(void) {
 #if PL_NOF_KEYS >= 1
   } else if (EVNT_EventIsSetAutoClear(EVNT_SW1_PRESSED)) {
 
-	  Calibration_Run();
-	  //StateMachine_Init();
+	 Calibration_Run();
+	 // StateMachine_Init();
 
   #if PL_HAS_SHELL
       SHELL_SendString("SW1 pressed!\r\n");
